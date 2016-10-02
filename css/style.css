@@ -24,6 +24,7 @@ body {
   border-radius: 5;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.3);
+
 }
 
 .site-listing {
@@ -47,6 +48,7 @@ body {
 .listing-group {
     margin-top: 3%;
 
+
 }
 
 .jumbotron {
@@ -65,7 +67,7 @@ body {
 
 .server-links {
   color:white;
-  padding-top: 8%;
+  padding-top: 15%;
 }
 
 .server-links a {
@@ -76,6 +78,7 @@ body {
 .server-links a:hover {
   color: #337ab7;
 }
+
 /* Remove extra padding from top bar sides */
 .row.jumbotron {
   padding-left: 0;
@@ -92,20 +95,24 @@ vertically align text
 }
 
 /* Set text alignment for top bar based on browser window size */
-#weatherBlock {
-  text-align: center;
 
+@media (max-width: 992px) {
+  #weatherBlock {
+    text-align: center;
+  }
+  #timeBlock {
+    text-align: center;
+  }
+  #weatherBlock h3 {
+    font-size: 18px;
+  }
+  #timeBlock h3 {
+    font-size: 18px;
+  }
+  .favorites {
+    margin-bottom: 2%;
+  }
 }
-#timeBlock {
-  text-align: center;
-}
-#weatherBlock h3 {
-  font-size: 18px;
-}
-#timeBlock h3 {
-  font-size: 18px;
-}
-
 @media (min-width: 992px) {
   #weatherBlock {
     text-align: left;
@@ -118,5 +125,8 @@ vertically align text
   }
   #timeBlock h3 {
     font-size: 24px;
+  }
+  .first-group {
+    margin-left: 4.166666665%;
   }
 }

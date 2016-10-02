@@ -27,22 +27,22 @@ function onLoad() {
 
         });
 
-    $(".list")
-        .click(function () {
-            var clickedAnchor = this
-                .closest("a")
-                .href;
-            $(this)
-                .fadeOut(
-                    300,
-                    "swing",
-                    function () {
+    //$(".list")
+    //  .click(function () {
+    //    var clickedAnchor = this
+    //      .closest("a")
+    //    .href;
+    //$(this)
+    //  .fadeOut(
+    //    300,
+    //  "swing",
+    //function () {
 
-                        location.href = clickedAnchor;
-                    }); //css("box-shadow", "inset 10px 10px 10px #000");
+    //  location.href = clickedAnchor;
+    //}); //css("box-shadow", "inset 10px 10px 10px #000");
 
-            return false;
-        });
+    //return false;
+    //});
 }
 
 function sleepFor(sleepDuration) {

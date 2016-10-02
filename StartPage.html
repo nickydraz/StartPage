@@ -1,0 +1,148 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel='stylesheet' type="text/css" href="css/sticky-footer.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js">
+        </script>
+        <script src="js/script.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="js/moment.js"></script>
+        <script src="/Users/nicholasdrazenovic/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap/fonts/glyphicons-halflings-regular.svg">
+        <title>NDraz | New Page</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row jumbotron">
+                <div id="weatherBlock" class="col-md-5 col-xs-12">
+                    <h3 id="weather"></h3>
+                    <script>
+                        weather();
+                    </script>
+                </div>
+                <div id="timeBlock" class="text-right time-frame col-md-2 col-md-offset-5 col-xs-12">
+                    <h3 id="time-part">
+                    </h3>
+                    <script>
+                        time();
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="row listing-group">
+            <div class="favorites col-md-4">
+                <div id="1" class="group-label text-center">
+                    <h3>Favorites</h3>
+                </div>
+                <ul id="site-list-1" class="site-listing" hidden="true">
+                    <a href="https://www.reddit.com">
+                        <li class="top-listing list">
+                            <img class="icon img-responsive img-thumbnail" src="images/favorites-icons/reddit.png" />
+                            <span class="link-text vcenter">Reddit</span>
+                        </li>
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/favorites-icons/facebook.png" />
+                            <span class="link-text vcenter">Facebook</span>
+                        </li>
+                    </a>
+                    <a href="https://www.twitter.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/favorites-icons/twitter.png" />
+                            <span class="link-text vcenter">Twitter</span>
+                        </li>
+                    </a>
+                    <a href="https://www.amazon.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/favorites-icons/amazon-white.png" />
+                            <span class="link-text vcenter">Amazon</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="favorites col-md-4">
+                <div id="2" class="group-label text-center">
+                    <h3>Media</h3>
+                </div>
+                <ul id="site-list-2" class="site-listing" hidden="true">
+                    <a href="https://www.netflix.com">
+                        <li class="top-listing list">
+                            <img class="icon img-responsive img-thumbnail" src="images/media-icons/netflix.png" />
+                            <span class="link-text vcenter">Netflix</span>
+                        </li>
+                    </a>
+                    <a href="https://www.hulu.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/media-icons/hulu.png" />
+                            <span class="link-text vcenter">Hulu</span>
+                        </li>
+                    </a>
+                    <a href="https://www.hbonow.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/media-icons/hbonow.png" />
+                            <span class="link-text vcenter">HBO Now</span>
+                        </li>
+                    </a>
+                    <a href="https://www.youtube.com/feed/subscriptions">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/media-icons/youtube.png" />
+                            <span class="link-text vcenter">Youtube</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="favorites col-md-4">
+                <div id="3" class="group-label text-center">
+                    <h3>Developer Tools</h3>
+                </div>
+                <ul id="site-list-3" class="site-listing" hidden="true">
+                    <a href="https://www.digitalocean.com">
+                        <li class="top-listing list">
+                            <img class="icon img-responsive img-thumbnail" src="images/dev-icons/digitalocean.ico" />
+                            <span class="link-text vcenter">Digital Ocean</span>
+                        </li>
+                    </a>
+                    <a href="https://www.codeschool.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/dev-icons/codeschool.png" />
+                            <span class="link-text vcenter">Code School</span>
+                        </li>
+                    </a>
+                    <a href="https://www.pluralsight.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/dev-icons/pluralsight.png" />
+                            <span class="link-text vcenter">PluralSight</span>
+                        </li>
+                    </a>
+                    <a href="https://www.stackoverflow.com">
+                        <li class="list">
+                            <img class="icon img-responsive img-thumbnail" src="images/dev-icons/stackoverflow.png" />
+                            <span class="link-text vcenter">StackOverflow</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <!-- End group link listing; Begin server links -->
+        <div class="row">
+            <div class="text-center server-links">
+                <div class="col-md-3 server-link"><a href="#">OwnCloud</a></div>
+                <div class="col-md-3 server-link"><a href="#">Portfolio</a></div>
+                <div class="col-md-3 server-link"><a href="#">Digital Ocean Account</a></div>
+                <div class="col-md-3 server-link"><a href="#">PHPMyAdmin</a></div>
+            </div>
+        </div>
+        </div>
+    </body>
+
+    <script>
+        $(document)
+            .load(onLoad());
+    </script>
+
+</html>

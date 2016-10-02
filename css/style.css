@@ -1,0 +1,122 @@
+body {
+  background-image: url("../images/footer_lodyas/footer_lodyas.png");
+  background-repeat: repeat;
+}
+
+
+.icon {
+  max-width: 35%;
+  max-height: 35%;
+  background-color: transparent;
+  opacity: inherit;
+  border: none;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.link-text {
+  font-size: 25;
+  color: white;
+}
+
+.favorites {
+  border: 1px solid #999;
+  border-radius: 5;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.3);
+}
+
+.site-listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.site-listing li {
+  padding-bottom: 5px;
+
+}
+
+.top-listing {
+  padding-top: 5px;
+}
+
+.bottom-listing {
+  padding-bottom: 5px;
+}
+
+.listing-group {
+    margin-top: 3%;
+
+}
+
+.jumbotron {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin-bottom: 0;
+  background-color: #222;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding-left: 2%;
+}
+
+.group-label {
+  color:white;
+}
+
+.server-links {
+  color:white;
+  padding-top: 8%;
+}
+
+.server-links a {
+  color:white;
+  text-decoration: none;
+}
+
+.server-links a:hover {
+  color: #337ab7;
+}
+/* Remove extra padding from top bar sides */
+.row.jumbotron {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+vertically align text
+*/
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+/* Set text alignment for top bar based on browser window size */
+#weatherBlock {
+  text-align: center;
+
+}
+#timeBlock {
+  text-align: center;
+}
+#weatherBlock h3 {
+  font-size: 18px;
+}
+#timeBlock h3 {
+  font-size: 18px;
+}
+
+@media (min-width: 992px) {
+  #weatherBlock {
+    text-align: left;
+  }
+  #timeBlock {
+    text-align: right;
+  }
+  #weatherBlock h3 {
+    font-size: 24px;
+  }
+  #timeBlock h3 {
+    font-size: 24px;
+  }
+}

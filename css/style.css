@@ -112,6 +112,29 @@ vertically align text
   .favorites {
     margin-bottom: 2%;
   }
+  .link-text {
+    display: none;
+  }
+  .list {
+    display: inline;
+    padding-right: 0;
+    border-radius: 30%;
+  }
+  .site-listing {
+    display: flex;
+    padding-bottom: 5%;
+  }
+  .site-listing li {
+    padding-top: 100%;
+    padding-bottom: 100%;
+  }
+  .icon {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .server-links {
+    padding-top: 0;
+  }
 }
 @media (min-width: 992px) {
   #weatherBlock {

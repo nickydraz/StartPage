@@ -1,11 +1,13 @@
+//Funciton that is run as soon as the page is ready
 function onLoad() {
-    // show the listings
+    //delay the page loaded animations for 600 ms,
+    // to allow for everything to load before starting animation
     setTimeout(function () {
         $(".site-listing")
             .show(600);
     }, 600);
 
-
+    // add an onclick event handler for the link groupings
     $(".group-label")
         .click(function () {
             var sThisId = this.id;
@@ -14,7 +16,9 @@ function onLoad() {
             $(sID)
                 .slideToggle();
 
-        });
+        }); // end onClick function
+
+    // add an onHover event handler for the links
     $(".list")
         .hover(function () {
             $(this)
@@ -25,8 +29,9 @@ function onLoad() {
             $(this)
                 .css("box-shadow", "none");
 
-        });
+        }); // end onHover function
 
+    //TODO find a nice animation/style change for when a link is clicked on.
     //$(".list")
     //  .click(function () {
     //    var clickedAnchor = this
@@ -42,9 +47,11 @@ function onLoad() {
     //}); //css("box-shadow", "inset 10px 10px 10px #000");
 
     //return false;
-    //});
-}
+    //}); // end link onClick function
+} // end onLoad
 
+//funtion found on StackOverflow for forcing a delay.
+// use sparringly...
 function sleepFor(sleepDuration) {
     var now = new Date()
         .getTime();
@@ -52,17 +59,22 @@ function sleepFor(sleepDuration) {
         .getTime() < now + sleepDuration) { /* do nothing */ }
 }
 
+//Function that loads in the weather information based on current location
 function weather() {
 
     var state = "";
     var city = "";
+
+    //JSON response object
     var sLoc;
+
     jQuery.when(
             sLoc = jQuery.getJSON("http://freegeoip.net/json/")
 
         )
         .done(function (json) {
-            if (sLoc == null) {
+            //if the JSON fetch failed, set default values here
+            if (sLoc === null) {
                 city = "Bolingbrook";
                 state = "IL";
             } else {
@@ -70,24 +82,33 @@ function weather() {
                 city = sLoc.responseJSON.city;
             }
 
-            $.simpleWeather({
-                location: city + ", " + state,
-                woeid: '',
-                unit: 'f',
-                success: function (weather) {
-                    html = '<span>' + weather.city + ", " + weather.region + " " + weather.temp + '&deg;' + weather.units.temp + " " + weather.currently + '</span>';
+            //Perform a try/catch here just in case the user
+            // doesn't have simpleWeather installed
+            try {
+                $.simpleWeather({
+                    location: city + ", " + state,
+                    woeid: '',
+                    unit: 'f',
+                    success: function (weather) {
+                        html = '<span>' + weather.city + ", " + weather.region + " " + weather.temp + '&deg;' + weather.units.temp + " " + weather.currently + '</span>';
 
-                    $("#weather")
-                        .html(html);
-                },
-                error: function (error) {
-                    $("#weather")
-                        .html('<p>' + error + '</p>');
-                }
-            });
-        });
+                        $("#weather")
+                            .html(html);
+                    },
+                    error: function (error) {
+                        $("#weather")
+                            .html('<span>' + error + '</span>');
+                    }
+                }); // end $.simpleWeather
+            } catch (err) {
+                //simpleWeather may not be installed
+                $("#weather")
+                    .html('<p>Welcome. Where would you like to go?</p>');
+            } // end try catch block
+        }); //end jQuery.when/done block
 }
 
+//Function that loads in a digital clock on the page
 function time() {
     var interval = setInterval(function () {
         var momentNow = moment();

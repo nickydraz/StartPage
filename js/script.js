@@ -97,13 +97,14 @@ function weather() {
                     },
                     error: function (error) {
                         $("#weather")
-                            .html('<span>' + error + '</span>');
+                            .html('<span>Welcome. Where would you like to go?</span>');
+                        Console.log(error);
                     }
                 }); // end $.simpleWeather
             } catch (err) {
                 //simpleWeather may not be installed
                 $("#weather")
-                    .html('<p>Welcome. Where would you like to go?</p>');
+                    .html('<span>Welcome. Where would you like to go?</span>');
             } // end try catch block
         }); //end jQuery.when/done block
 }

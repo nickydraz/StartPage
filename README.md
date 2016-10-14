@@ -9,5 +9,5 @@ Feel free to download the source and use it yourself if you like it. If you noti
 # Known Bugs
 - Sometimes the weather doesn't load, or takes a long time to load
 - Transitions between mobile/desktop views sometimes break, leaving the screen a bit of a mess
-- When hovering over a link, there is a strange blue tick-mark on the text
+- ~~When hovering over a link, there is a strange blue tick-mark on the text~~
 

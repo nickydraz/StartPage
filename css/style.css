@@ -32,10 +32,10 @@ body {
   padding-left: 0;
 }
 
-.site-listing a:hover {
+
+.site-listing a {
   text-decoration: none;
 }
-
 .site-listing li {
   padding-bottom: 5px;
 

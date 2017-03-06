@@ -123,7 +123,7 @@ function time() {
 }
 
 function SubmitSearch() {
-    var quickPattern = /reddit|facebook|twitter|youtube|amazon|netflix|hulu|hbo|hbo now|hbonow|github|code school| codeschool|tfs|teamserver|team|stack|stackoverflow|stack overflow/;
+    var quickPattern = /^reddit$|^facebook$|^twitter$|^youtube$|^amazon$|^netflix$|^hulu$|^hbo$|^hbo now$|^hbonow$|^github$|^code school$|^codeschool$|^tfs$|^teamserver$|^team$|^stack$|^stackoverflow$|^stack overflow$/;
     var pattern = /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
     var userVal = $('#searchBar')
         .val();
@@ -140,7 +140,7 @@ function SubmitSearch() {
             }
         case "hbo":
             {
-                url = "https://hbownow.com";
+                url = "https://hbonow.com";
                 break;
             }
         case "stack":

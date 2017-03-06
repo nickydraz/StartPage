@@ -3,7 +3,17 @@ body {
   background-repeat: repeat;
 }
 
+.container-fluid .row.jumbotron.topBar {
+  padding-top: 1%;
+  padding-bottom: 0;
+}
 
+#searchBar {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+
+}
 .icon {
   max-width: 35%;
   max-height: 35%;

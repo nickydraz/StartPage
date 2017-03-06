@@ -140,7 +140,7 @@ function SubmitSearch() {
             }
         case "hbo":
             {
-                url = "https://hbonow.com";
+                url = "https://www.hbonow.com";
                 break;
             }
         case "stack":

@@ -123,9 +123,43 @@ function time() {
 }
 
 function SubmitSearch() {
+    var quickPattern = /reddit|facebook|twitter|youtube|amazon|netflix|hulu|hbo|hbo now|hbonow|github|code school| codeschool|tfs|teamserver|team|stack|stackoverflow|stack overflow/;
     var pattern = /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
     var userVal = $('#searchBar')
         .val();
+
+    if (quickPattern.test(userVal)) {
+        var url = "";
+        switch (userVal) {
+        case "teamserver":
+        case "tfs":
+        case "team":
+            {
+                url = "http://teamserver:8080/tfs";
+                break;
+            }
+        case "hbo":
+            {
+                url = "https://hbownow.com";
+                break;
+            }
+        case "stack":
+            {
+                url = "https://www.stackoverflow.com";
+                break;
+            }
+        default:
+            {
+                url = "https://www." + userVal.replace(' ', '') + ".com";
+                break;
+            }
+        }
+
+        $(location)
+            .attr("href", url);
+        return;
+    }
+
     if (pattern.test(userVal)) {
         pattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*) /;
         if (pattern.test(userVal)) {

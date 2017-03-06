@@ -121,3 +121,23 @@ function time() {
             clearInterval(interval);
         });
 }
+
+function SubmitSearch() {
+    var pattern = /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+    var userVal = $('#searchBar')
+        .val();
+    if (pattern.test(userVal)) {
+        pattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*) /;
+        if (pattern.test(userVal)) {
+            $(location)
+                .attr("href", userVal);
+        } else {
+            $(location)
+                .attr("href", "http://" + userVal);
+        }
+
+    } else {
+        $(location)
+            .attr("href", "https://duckduckgo.com?q=" + userVal);
+    }
+}

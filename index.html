@@ -22,16 +22,23 @@
 
     <body>
         <div class="container-fluid">
-            <div class="row jumbotron">
-                <div id="weatherBlock" class="col-md-5 col-xs-12">
-                    <h3 id="weather">Loading weather...</h3>
+            <div class="row jumbotron topBar">
+                <div id="weatherBlock" class="col-md-3 col-xs-12">
+                    <h4 id="weather">Loading weather...</h4>
                     <script>
                         weather();
                     </script>
                 </div>
-                <div id="timeBlock" class="text-right time-frame col-md-2 col-md-offset-5 col-xs-12">
-                    <h3 id="time-part">
-                    </h3>
+                <div id="addressBar" class="col-md-6 col-xs-12">
+                    <form onsubmit="SubmitSearch(); return false;">
+                        <div class="form-group">
+                            <input type="text" id="searchBar" autofocus="true" class="form-control" placeholder="Search DuckDuckGo... " />
+                        </div>
+                    </form>
+                </div>
+                <div id="timeBlock" class="text-right time-frame col-md-3 col-xs-12 ">
+                    <h4 id="time-part">
+                  </h4>
                     <script>
                         time();
                     </script>

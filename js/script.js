@@ -102,13 +102,13 @@ function SubmitSearch() {
         case "cloud":
         case "owncloud":
             {
-                url = "http://cloud.ndraz.com";
+                url = "https://cloud.ndraz.com";
                 break;
             }
         case "ndraz":
         case "dev":
             {
-                url = "http://dev.ndraz.com";
+                url = "https://dev.ndraz.com";
                 break;
             }
         case "digitalocean":
@@ -121,12 +121,12 @@ function SubmitSearch() {
             }
         case "php":
             {
-                url = "http://php.ndraz.com";
+                url = "https://php.ndraz.com";
                 break;
             }
         default:
             {
-                url = "http://www." + userVal.replace(' ', '') + ".com";
+                url = "https://www." + userVal.replace(' ', '') + ".com";
                 break;
             }
         }
